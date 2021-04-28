@@ -2,6 +2,8 @@
 
 Enables SwiftUI live previews for UIKit views and view controllers.
 
+![uikitlivepreview720](https://user-images.githubusercontent.com/4868132/116438635-377b3100-a881-11eb-9a6c-34698b524848.gif)
+
 ## Requirements
 
 - macOS Catalina or later
