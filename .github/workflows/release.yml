@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create XCFramework
-        uses: unsignedapps/swift-create-xcframework@v1.4
+        uses: nicoelayda/swift-create-xcframework@v1.5.0
 
       - name: Rename files
         run: |
