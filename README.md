@@ -1,3 +1,67 @@
 # UIKitLivePreview
 
-A description of this package.
+Enables SwiftUI live previews for UIKit views and view controllers.
+
+## Requirements
+
+- macOS Catalina or later
+- Xcode 12 or later
+- iOS Deployment Target iOS 12.0 or later
+
+## Installation
+
+### Swift Package Manager
+
+In Xcode, select **File > Swift Packages > Add Package Dependency...**
+
+Add `https://github.com/nicoelayda/UIKitLivePreview.git` as the package repository URL.
+
+**or**
+
+If you have an existing `Package.swift` file, add `UIKitLivePreview` package to your target's dependencies.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.0.0"))
+]
+```
+
+### Manual
+
+Copy the contents of [`Sources/UIKitLivePreview`](https://github.com/nicoelayda/UIKitLivePreview/tree/main/Sources/UIKitLivePreview) to your project.
+
+## Usage
+1. Import `UIKitLivePreview` in your view or view controller.
+2. In the same Swift file, define a new struct conforming to `PreviewProvider`.
+3. Inside the `previews` property of the `PreviewProvider`:
+    - Initialise your UIKit view or view controller, passing any dependencies it needs.
+    - Call `preview()` on it to create a wrapped SwiftUI `View` instance.
+    - Return the preview instance.
+    
+#### Example
+    
+```swift
+
+final class MyViewController: UIViewController { /* ... */ }
+
+#if DEBUG && canImport(SwiftUI)
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct MyViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        MyViewController()
+            .preview()
+    }
+}
+#endif
+```
+
+**NOTE:** If your project is targeting iOS 12, it is recommended to wrap the `PreviewProvider` struct in a `#if canImport(SwiftUI)` directive and add a `@available(iOS 13.0, *)` attribute to it.
+
+Check out [**UIKitLivePreview-Examples**](https://github.com/nicoelayda/UIKitLivePreview-Examples) for a sample project.
+
+## License
+
+MIT. See [LICENSE](https://github.com/nicoelayda/UIKitLivePreview/blob/main/LICENSE).
+
