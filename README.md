@@ -12,7 +12,7 @@ Enables SwiftUI live previews for UIKit views and view controllers.
 
 ## Installation
 
-### Swift Package Manager
+### Swift Package Manager (Recommended)
 
 In Xcode, select **File > Swift Packages > Add Package Dependency...**
 
@@ -26,6 +26,14 @@ If you have an existing `Package.swift` file, add `UIKitLivePreview` package to 
 dependencies: [
     .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.0.0"))
 ]
+```
+
+### Cocoapods
+
+Add `UIKitLivePreview` to your `Podfile`.
+
+```ruby
+pod 'UIKitLivePreview', '~> 1.0.0'
 ```
 
 ### Manual
