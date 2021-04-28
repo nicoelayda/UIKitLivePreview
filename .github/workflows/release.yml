@@ -1,0 +1,47 @@
+name: Release Builds
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create_release:
+    name: Create new release
+    runs-on: macos-latest
+    steps:
+      - name: Create release
+        id: create_release  
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: true
+          prerelease: false
+
+  build_release:
+    name: Build XCFramework
+    needs: create_release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create XCFramework
+        uses: unsignedapps/swift-create-xcframework@v1.4
+
+      - name: Rename files
+        run: |
+          mv UIKitLivePreview.zip UIKitLivePreview.framework.zip
+          mv UIKitLivePreview.sha256 UIKitLivePreview.framework.sha256
+
+      - name: Upload XCFramework archive
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            UIKitLivePreview.framework.zip
+            UIKitLivePreview.framework.sha256
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
