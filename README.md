@@ -28,6 +28,7 @@ dependencies: [
 ]
 ```
 
+
 ### Cocoapods
 
 Add `UIKitLivePreview` to your `Podfile`.
@@ -36,7 +37,8 @@ Add `UIKitLivePreview` to your `Podfile`.
 pod 'UIKitLivePreview', '~> 1.0.0'
 ```
 
-### Manual
+
+### Manual Install
 
 Copy the contents of [`Sources/UIKitLivePreview`](https://github.com/nicoelayda/UIKitLivePreview/tree/main/Sources/UIKitLivePreview) to your project.
 
