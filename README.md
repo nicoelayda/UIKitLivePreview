@@ -28,6 +28,15 @@ dependencies: [
 ]
 ```
 
+### Carthage
+
+Add `UIKitLivePreview` to your `Cartfile`
+
+```
+github "nicoelayda/UIKitLivePreview" "1.0.0"
+```
+
+
 ### Cocoapods
 
 Add `UIKitLivePreview` to your `Podfile`.
