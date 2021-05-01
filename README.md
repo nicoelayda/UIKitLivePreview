@@ -8,7 +8,7 @@ Enables SwiftUI live previews for UIKit views and view controllers.
 
 - macOS Catalina or later
 - Xcode 12 or later
-- iOS Deployment Target iOS 12.0 or later
+- iOS Deployment Target 12.0 or later
 
 ## Installation
 
@@ -28,15 +28,26 @@ dependencies: [
 ]
 ```
 
+### Carthage
+
+1. Add `UIKitLivePreview` to your `Cartfile`.
+
+    ```
+    github "nicoelayda/UIKitLivePreview" ~> 1.0.0
+    ```
+
+2. Run `carthage update --use-xcframeworks`
+3. Drag `UIKitLivePreview.xcframework` in `Carthage/Build` into your application target's **Frameworks, Libraries and Embedded Content**.
 
 ### Cocoapods
 
-Add `UIKitLivePreview` to your `Podfile`.
+1. Add `UIKitLivePreview` to your `Podfile`.
 
-```ruby
-pod 'UIKitLivePreview', '~> 1.0.0'
-```
+    ```ruby
+    pod 'UIKitLivePreview', '~> 1.0.0'
+    ```
 
+2. Run `pod install`
 
 ### Manual Install
 
@@ -45,7 +56,7 @@ Copy the contents of [`Sources/UIKitLivePreview`](https://github.com/nicoelayda/
 ## Usage
 1. Import `UIKitLivePreview` in your view or view controller.
 2. In the same Swift file, define a new struct conforming to `PreviewProvider`.
-3. Inside the `previews` property of the `PreviewProvider`:
+3. Inside the `previews` property:
     - Initialise your UIKit view or view controller, passing any dependencies it needs.
     - Call `preview()` on it to create a wrapped SwiftUI `View` instance.
     - Return the preview instance.
