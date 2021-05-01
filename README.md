@@ -53,6 +53,8 @@ dependencies: [
 
 Copy the contents of [`Sources/UIKitLivePreview`](https://github.com/nicoelayda/UIKitLivePreview/tree/main/Sources/UIKitLivePreview) to your project.
 
+A prebuilt [XCFramework binary](https://github.com/nicoelayda/UIKitLivePreview/releases/latest) is also available
+
 ## Usage
 1. Import `UIKitLivePreview` in your view or view controller.
 2. In the same Swift file, define a new struct conforming to `PreviewProvider`.
