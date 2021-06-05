@@ -59,9 +59,10 @@ A prebuilt [XCFramework binary](https://github.com/nicoelayda/UIKitLivePreview/r
 1. Import `UIKitLivePreview` in your view or view controller.
 2. In the same Swift file, define a new struct conforming to `PreviewProvider`.
 3. Inside the `previews` property:
-    - Initialise your UIKit view or view controller, passing any dependencies it needs.
+    - Initialise your UIKit view or view controller.
     - Call `preview()` on it to create a wrapped SwiftUI `View` instance.
     - Return the preview instance.
+4. Optionally, you may chain `ViewModifier`s to customise the preview. See example below.
     
 #### Example
     
@@ -77,12 +78,14 @@ struct MyViewController_Preview: PreviewProvider {
     static var previews: some View {
         MyViewController()
             .preview()
+            .device(.iPhone11)
+            .landscape()
     }
 }
 #endif
 ```
 
-**NOTE:** If your project is targeting iOS 12, it is recommended to wrap the `PreviewProvider` struct in a `#if canImport(SwiftUI)` directive and add a `@available(iOS 13.0, *)` attribute to it.
+**NOTE:** If your project is targeting iOS 12, it is recommended to wrap the `PreviewProvider` struct in a `#if canImport(SwiftUI)` directive and add the `@available(iOS 13.0, *)` attribute to it.
 
 Check out [**UIKitLivePreview-Examples**](https://github.com/nicoelayda/UIKitLivePreview-Examples) for a sample project.
 
