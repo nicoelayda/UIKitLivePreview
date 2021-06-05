@@ -24,7 +24,7 @@ If you have an existing `Package.swift` file, add `UIKitLivePreview` package to 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.1.0"))
+    .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.2.0"))
 ]
 ```
 
@@ -33,7 +33,7 @@ dependencies: [
 1. Add `UIKitLivePreview` to your `Cartfile`.
 
     ```
-    github "nicoelayda/UIKitLivePreview" ~> 1.1.0
+    github "nicoelayda/UIKitLivePreview" ~> 1.2.0
     ```
 
 2. Run `carthage update --use-xcframeworks`
@@ -44,7 +44,7 @@ dependencies: [
 1. Add `UIKitLivePreview` to your `Podfile`.
 
     ```ruby
-    pod 'UIKitLivePreview', '~> 1.1.0'
+    pod 'UIKitLivePreview', '~> 1.2.0'
     ```
 
 2. Run `pod install`
