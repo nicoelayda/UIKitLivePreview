@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
     spec.name         = "UIKitLivePreview"
-    spec.version      = "1.2.0"
+    spec.version      = "1.3.0"
     spec.summary      = "SwiftUI live previews for UIKit"
     spec.description  = <<-DESC
                         UIKitLivePreview enables Xcode live previews for UIKit just like SwiftUI.

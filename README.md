@@ -14,7 +14,9 @@ Enables SwiftUI live previews for UIKit views and view controllers.
 
 ### Swift Package Manager (Recommended)
 
-In Xcode, select **File > Swift Packages > Add Package Dependency...**
+In Xcode 13 or later, select **File > Add Packages...** 
+
+In Xcode 12, select **File > Swift Packages > Add Package Dependency...**
 
 Add `https://github.com/nicoelayda/UIKitLivePreview.git` as the package repository URL.
 
@@ -24,7 +26,7 @@ If you have an existing `Package.swift` file, add `UIKitLivePreview` package to 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.2.0"))
+    .package(url: "https://github.com/nicoelayda/UIKitLivePreview.git", .upToNextMajor(from: "1.3.0"))
 ]
 ```
 
@@ -33,7 +35,7 @@ dependencies: [
 1. Add `UIKitLivePreview` to your `Cartfile`.
 
     ```
-    github "nicoelayda/UIKitLivePreview" ~> 1.2.0
+    github "nicoelayda/UIKitLivePreview" ~> 1.3.0
     ```
 
 2. Run `carthage update --use-xcframeworks`
@@ -44,7 +46,7 @@ dependencies: [
 1. Add `UIKitLivePreview` to your `Podfile`.
 
     ```ruby
-    pod 'UIKitLivePreview', '~> 1.2.0'
+    pod 'UIKitLivePreview', '~> 1.3.0'
     ```
 
 2. Run `pod install`
