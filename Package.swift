@@ -20,8 +20,5 @@ let package = Package(
         .target(
             name: "UIKitLivePreview",
             dependencies: []),
-        .testTarget(
-            name: "UIKitLivePreviewTests",
-            dependencies: ["UIKitLivePreview"]),
     ]
 )
