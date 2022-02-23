@@ -15,19 +15,17 @@ public protocol UIKitRepresentable {
 }
 
 @available(iOS 13, *)
-public extension UIKitRepresentable where Self: UIView {
-    func preview() -> some View {
+extension UIView: UIKitRepresentable {
+    public func preview() -> some View {
         return Preview(view: self)
     }
 }
 
 @available(iOS 13, *)
-public extension UIKitRepresentable where Self: UIViewController {
-    func preview() -> some View {
+extension UIViewController: UIKitRepresentable {
+    public func preview() -> some View {
         return Preview(viewController: self)
     }
 }
 
-extension UIView: UIKitRepresentable { }
-extension UIViewController: UIKitRepresentable { }
 #endif
